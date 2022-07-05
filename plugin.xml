@@ -12,19 +12,6 @@
   <js-module src="www/barcodescanner.js" name="BarcodeScanner">
     <clobbers target="cordova.plugins.barcodeScanner"/>
   </js-module>
-  <platform name="ios">
-    <config-file target="config.xml" parent="/*">
-      <feature name="BarcodeScanner">
-        <param name="ios-package" value="CDVBarcodeScanner"/>
-      </feature>
-    </config-file>
-    <resource-file src="src/ios/scannerOverlay.xib"/>
-    <resource-file src="src/ios/CDVBarcodeScanner.bundle"/>
-    <source-file src="src/ios/CDVBarcodeScanner.mm"/>
-    <!-- frameworks -->
-    <framework src="AVFoundation.framework" />
-    <framework src="AudioToolbox.framework" />
-  </platform>
   <platform name="android">
     <source-file src="src/android/com/phonegap/plugins/barcodescanner/BarcodeScanner.java" target-dir="src/com/phonegap/plugins/barcodescanner"/>
     <config-file target="res/xml/config.xml" parent="/*">
