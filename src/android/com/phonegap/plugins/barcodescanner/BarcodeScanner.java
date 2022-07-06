@@ -117,7 +117,7 @@ public class BarcodeScanner extends CordovaPlugin {
      * check application's permissions
      */
    public boolean hasPermisssion() {
-        return;
+        return true;
    }
 
     /**
@@ -128,7 +128,7 @@ public class BarcodeScanner extends CordovaPlugin {
      */
    public void requestPermissions(int requestCode)
    {
-        return;;
+        return;
    }
 
    /**
