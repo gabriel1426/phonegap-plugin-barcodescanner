@@ -10,7 +10,7 @@
 
         var exec = cordova.require("cordova/exec");
 
-        var scanInProgress = false;
+        //var scanInProgress = false;
 
         /**
          * Constructor.
@@ -104,16 +104,18 @@ BarcodeScanner.prototype.scan = function (successCallback, errorCallback, config
                 return;
             }
 
+            /*        
             if (scanInProgress) {
-                errorCallback('Scan is already in progress');
-                return;
-            }
+                        errorCallback('Scan is already in progress');
+                        return;
+                    }
 
             scanInProgress = true;
+            */
 
             exec(
                 function(result) {
-                    scanInProgress = false;
+                    //scanInProgress = false;
                     // work around bug in ZXing library
                     if (result.format === 'UPC_A' && result.text.length === 13) {
                         result.text = result.text.substring(1);
@@ -121,7 +123,7 @@ BarcodeScanner.prototype.scan = function (successCallback, errorCallback, config
                     successCallback(result);
                 },
                 function(error) {
-                    scanInProgress = false;
+                    //scanInProgress = false;
                     errorCallback(error);
                 },
                 'BarcodeScanner',
