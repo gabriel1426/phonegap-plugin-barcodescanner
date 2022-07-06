@@ -1,12 +1,9 @@
 repositories{
-    jcenter()
-    flatDir{
-        dirs 'libs'
-    }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compile(name:'barcodescanner-release-2.1.5', ext:'aar')
+    implementation 'com.github.blikoon:QRCodeScanner:0.1.2'
 }
 
 android {
